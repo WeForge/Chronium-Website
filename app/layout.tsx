@@ -1,8 +1,8 @@
+import './globals.css';
 import { RootProvider } from 'fumadocs-ui/provider';
-import 'fumadocs-ui/style.css';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
-import './global.css'
+
 const inter = Inter({
   subsets: ['latin'],
 });
@@ -10,13 +10,7 @@ const inter = Inter({
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          minHeight: '100vh',
-        }}
-      >
+      <body className="flex flex-col min-h-screen">
         <RootProvider>{children}</RootProvider>
       </body>
     </html>

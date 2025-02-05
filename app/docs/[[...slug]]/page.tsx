@@ -8,8 +8,6 @@ import {
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 
-const PREFIX = ''
-
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
@@ -20,7 +18,7 @@ export default async function Page(props: {
   const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
+    <DocsPage footer={{ enabled: false }}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
@@ -42,7 +40,7 @@ export async function generateMetadata(props: {
   if (!page) notFound();
 
   return {
-    title: 'Chronium | Documentation',
-    description: `Welcome to the Chronium Documentation!\n\nHere’s the info you need:\n\nCommand Name: ${PREFIX}${page.data.title}\nCommand Description: ${page.data.description}\n\nFeel free to explore the documentation for more details.`,
-  };  
+    title: page.data.title,
+    description: page.data.description,
+  };
 }
