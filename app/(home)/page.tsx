@@ -1,14 +1,16 @@
-import Hero from "@/components/hero"
-import Navbar from "@/components/navbar"
-import { SparklesCore } from "@/components/sparkles"
-import Features from "@/components/features"
-import Stats from "@/components/stats"
-import Testimonials from "@/components/testimonials"
-import CTA from "@/components/cta"
-import Footer from "@/components/footer"
-import { Suspense } from "react"
-import Loading from "@/components/loading"
-import { Providers } from "./providers"
+"use client";
+import Hero from "@/components/hero";
+import DesktopNavbar from "@/components/DesktopNavbar";
+import MobileNavbar from "@/components/MobileNavbar"; // <-- import your mobile navbar component
+import { SparklesCore } from "@/components/sparkles";
+import Features from "@/components/features";
+import Stats from "@/components/stats";
+import Testimonials from "@/components/testimonials";
+import CTA from "@/components/cta";
+import Footer from "@/components/footer";
+import { Suspense } from "react";
+import Loading from "@/components/loading";
+import { Providers } from "./providers";
 
 export default function Home() {
   return (
@@ -29,10 +31,17 @@ export default function Home() {
         </div>
 
         <div className="relative z-10">
-        <Suspense fallback={<Loading />}>
-            <Navbar />
+          <Suspense fallback={<Loading />}>
+            {/* Mobile Navbar shown on small screens */}
+            <div className="block md:hidden">
+              <MobileNavbar />
+            </div>
+            {/* Desktop Navbar shown on medium and larger screens */}
+            <div className="hidden md:block">
+              <DesktopNavbar />
+            </div>
           </Suspense>
-        <Suspense fallback={<Loading />}>
+          <Suspense fallback={<Loading />}>
             <Hero />
           </Suspense>
           <Suspense fallback={<Loading />}>
@@ -49,6 +58,5 @@ export default function Home() {
         </div>
       </main>
     </Providers>
-  )
+  );
 }
-

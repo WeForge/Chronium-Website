@@ -1,13 +1,16 @@
-"use client"
+"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { Bot } from "lucide-react";
+import { ReactNode } from "react";
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import Link from "next/link"
-import { Bot } from "lucide-react"
-import type React from "react"
-
-export default function Navbar() {
-  const { scrollY } = useScroll()
-  const backgroundColor = useTransform(scrollY, [0, 100], ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.8)"])
+function DesktopNavbar() {
+  const { scrollY } = useScroll();
+  const backgroundColor = useTransform(
+    scrollY,
+    [0, 100],
+    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.8)"]
+  );
 
   return (
     <motion.nav
@@ -48,24 +51,25 @@ export default function Navbar() {
           Add to Discord
         </button>
       </motion.div>
-
-      <motion.button
-        className="md:hidden text-white p-2"
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-      >
-        <Bot className="w-6 h-6" />
-      </motion.button>
     </motion.nav>
-  )
+  );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+interface NavLinkProps {
+  href: string;
+  children: ReactNode;
+}
+
+function NavLink({ href, children }: NavLinkProps) {
   return (
-    <Link href={href} className="text-gray-300 hover:text-white transition-colors relative group">
+    <Link
+      href={href}
+      className="text-gray-300 hover:text-white transition-colors relative group"
+    >
       {children}
       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full" />
     </Link>
-  )
+  );
 }
+
+export default DesktopNavbar;

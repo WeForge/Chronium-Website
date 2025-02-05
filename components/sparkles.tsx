@@ -30,36 +30,44 @@ export const SparklesCore = ({
     if (typeof window === "undefined") return;
 
     const canvas = canvasRef.current;
-    if (!canvas) return; // Ensure canvas exists before using it
+    if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return; // Ensure context exists before using it
-
+    // Use non-null assertion operator to assure TS that ctx is not null.
+    const ctx = canvas.getContext("2d")!;
+    
     let particles: Particle[] = [];
     let animationFrameId: number;
 
+    let currentWidth = window.innerWidth;
+    let currentHeight = particleHeight;
+
     const resizeCanvas = () => {
       const canvas = canvasRef.current;
-      if (!canvas) return; // Re-check in case it's null
-      canvas.width = window.innerWidth;
-      canvas.height = particleHeight;
-      setDimensions({ width: window.innerWidth, height: particleHeight });
+      if (!canvas) return;
+      const scale = window.devicePixelRatio || 1;
+      currentWidth = window.innerWidth;
+      currentHeight = particleHeight;
+      canvas.width = currentWidth * scale;
+      canvas.height = currentHeight * scale;
+      canvas.style.width = currentWidth + "px";
+      canvas.style.height = currentHeight + "px";
+      ctx.setTransform(scale, 0, 0, scale, 0, 0);
+      setDimensions({ width: currentWidth, height: currentHeight });
     };
 
     resizeCanvas();
 
     class Particle {
-      x!: number;
-      y!: number;
-      size!: number;
-      speedX!: number;
-      speedY!: number;
-      opacity!: number;
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      opacity: number;
 
       constructor() {
-        if (!canvas) return; // Ensure canvas exists
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * currentWidth;
+        this.y = Math.random() * currentHeight;
         this.size = Math.random() * (maxSize - minSize) + minSize;
         this.speedX = Math.random() * 0.2 - 0.1;
         this.speedY = Math.random() * 0.2 - 0.1;
@@ -67,14 +75,13 @@ export const SparklesCore = ({
       }
 
       update() {
-        if (!canvas) return; // Ensure canvas exists before using width/height
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
+        if (this.x > currentWidth) this.x = 0;
+        if (this.x < 0) this.x = currentWidth;
+        if (this.y > currentHeight) this.y = 0;
+        if (this.y < 0) this.y = currentHeight;
 
         this.opacity += Math.random() * 0.02 - 0.01;
         if (this.opacity > 1) this.opacity = 1;
@@ -82,7 +89,6 @@ export const SparklesCore = ({
       }
 
       draw() {
-        if (!ctx) return; // Ensure context exists
         ctx.fillStyle = particleColor;
         ctx.globalAlpha = this.opacity;
         ctx.beginPath();
@@ -100,9 +106,8 @@ export const SparklesCore = ({
     };
 
     const animate = () => {
-      const canvas = canvasRef.current;
-      if (!canvas || !ctx) return; // Ensure both exist before proceeding
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (!canvas) return;
+      ctx.clearRect(0, 0, currentWidth, currentHeight);
 
       particles.forEach((particle) => {
         particle.update();
@@ -116,9 +121,11 @@ export const SparklesCore = ({
     animate();
 
     window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("orientationchange", resizeCanvas);
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("orientationchange", resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
   }, [maxSize, minSize, particleColor, particleDensity, particleHeight]);

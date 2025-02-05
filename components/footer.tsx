@@ -11,7 +11,7 @@ export default function Footer() {
               <Bot className="w-8 h-8 text-purple-500" />
               <span className="text-white font-medium text-xl">Chronium</span>
             </Link>
-            <p className="text-gray-400 mt-2">Your Discord time management solution</p>
+            <p className="text-gray-400 mt-2">Your All-In-One Discord Server Solution</p>
           </div>
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
@@ -28,11 +28,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Support
                 </Link>
               </li>
@@ -41,11 +36,6 @@ export default function Footer() {
           <div className="w-full md:w-1/3">
             <h3 className="text-white font-semibold mb-4">Connect</h3>
             <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
-                  Twitter
-                </a>
-              </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
                   GitHub
@@ -60,7 +50,10 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-purple-900/50 text-center">
-          <p className="text-gray-400">&copy; {new Date().getFullYear()} Chronium. All rights reserved.</p>
+        <p className="text-gray-400">
+          &copy; {new Date().getFullYear()} Chronium. All rights reserved.<br />
+          Website Developed By <strong><a href="https://github.com/Zack-911" target="_blank" rel="noopener noreferrer" className="underline">Zack-911</a></strong>
+        </p>
         </div>
       </div>
     </footer>
