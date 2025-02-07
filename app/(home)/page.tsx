@@ -8,8 +8,6 @@ import Stats from "@/components/stats";
 import Testimonials from "@/components/testimonials";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
-import { Suspense } from "react";
-import Loading from "@/components/loading";
 import { Providers } from "./providers";
 
 export default function Home() {
@@ -31,28 +29,18 @@ export default function Home() {
         </div>
 
         <div className="relative z-10">
-          <Suspense fallback={<Loading />}>
-            {/* Mobile Navbar shown on small screens */}
-            <div className="block md:hidden">
-              <MobileNavbar />
-            </div>
-            {/* Desktop Navbar shown on medium and larger screens */}
-            <div className="hidden md:block">
-              <DesktopNavbar />
-            </div>
-          </Suspense>
-          <Suspense fallback={<Loading />}>
-            <Hero />
-          </Suspense>
-          <Suspense fallback={<Loading />}>
-            <Features />
-          </Suspense>
-          <Suspense fallback={<Loading />}>
-            <Stats />
-          </Suspense>
-          <Suspense fallback={<Loading />}>
-            <Testimonials />
-          </Suspense>
+          {/* Mobile Navbar shown on small screens */}
+          <div className="block md:hidden">
+            <MobileNavbar />
+          </div>
+          {/* Desktop Navbar shown on medium and larger screens */}
+          <div className="hidden md:block">
+            <DesktopNavbar />
+          </div>
+          <Hero />
+          <Features />
+          <Stats />
+          <Testimonials />
           <CTA />
           <Footer />
         </div>
