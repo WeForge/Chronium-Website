@@ -5,38 +5,51 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { SparklesCore } from '@/components/sparkles';
 
+/**
+ * Represents a team member with optional social media profiles.
+ */
 interface TeamMember {
+  /** The team member's full name. */
   name: string;
+  /** The team member's role within the team. */
   role: string;
+  /** A brief biography of the team member. */
   bio: string;
+  /** URL to the team member's avatar image. */
   avatar?: string;
+  /** URL to the team member's GitHub profile. */
   github?: string;
+  /** URL to the team member's Instagram profile. */
   instagram?: string;
+  /** URL to the team member's Discord profile. */
   discord?: string;
 }
 
+/** An array of team members with their details. */
 const teamMembers: TeamMember[] = [
   {
     name: 'Zack',
     role: 'Lead Developer',
-    bio: 'I’m a developer who loves making websites and Discord bots. I mess around with JavaScript, ForgeScript, and Next.js, always trying new things to make stuff better and more fun to use.',
+    bio: 'I’m a developer who loves making websites and Discord bots.\nI mess around with JavaScript, ForgeScript, and Next.js, always trying new things to make stuff better and more fun to use.',
+    // avatar: '/team/zack911.png', // Uncomment this if you have an image
     github: 'https://github.com/zack-911',
     instagram: 'https://instagram.com/o_o.muhammad',
     discord: 'https://discord.com/users/1273256222715285527',
   },
+  // Add more team members as needed
 ];
+
 
 function getInitials(name: string): string {
   return name
     .split(' ')
-    .map((part) => part[0])
+    .map((part: string) => part[0])
     .join('');
 }
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen w-full bg-black antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      {/* Sparkle Effect */}
       <div className="absolute inset-0 z-0">
         <SparklesCore
           id="tsparticlesfullpage"
@@ -51,17 +64,16 @@ export default function AboutPage() {
       </div>
 
       <div className="relative z-10">
-        <div className="container mx-auto px-4 py-24">
-          {/* Fix Clipping Issue */}
+        <div className="container mx-auto px-4 py-16 pt-0.75">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-center text-white mb-12 pt-20"
+            className="text-4xl md:text-5xl font-bold text-center text-white mb-8 pt-24"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             About Chronium
           </motion.h1>
-
+          
           <motion.section
             className="mb-16"
             initial={{ opacity: 0 }}
@@ -69,7 +81,9 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-2xl font-semibold text-purple-400 mb-4">Our Story</h2>
-            <p className="text-gray-300 leading-relaxed">Skibidi Rizz Ohio Yesh Yesh YEsh</p>
+            <p className="text-gray-300 leading-relaxed">
+              Skibidi Rizz Ohio Yesh Yesh YEsh
+            </p>
           </motion.section>
 
           <motion.section
@@ -95,7 +109,9 @@ export default function AboutPage() {
                       className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                     />
                   ) : (
-                    <div className="w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-purple-500 to-black text-white font-semibold text-2xl">
+                    <div
+                      className="w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-purple-500 to-black text-white font-semibold text-2xl"
+                    >
                       {getInitials(member.name)}
                     </div>
                   )}
@@ -139,28 +155,52 @@ export default function AboutPage() {
             </div>
           </motion.section>
 
-          <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.6 }}>
+          <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             <h2 className="text-2xl font-semibold text-purple-400 mb-4">Credits</h2>
             <ul className="list-disc list-inside text-gray-300 space-y-2">
               <li>
                 Icons by{' '}
-                <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">
+                <a
+                  href="https://fontawesome.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-400 hover:underline"
+                >
                   Font Awesome
                 </a>
               </li>
               <li>
                 Animations powered by{' '}
-                <a href="https://www.framer.com/motion/" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">
+                <a
+                  href="https://www.framer.com/motion/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-400 hover:underline"
+                >
                   Framer Motion
                 </a>
               </li>
               <li>
                 Built with{' '}
-                <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">
+                <a
+                  href="https://nextjs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-400 hover:underline"
+                >
                   Next.js
                 </a>{' '}
                 and{' '}
-                <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">
+                <a
+                  href="https://tailwindcss.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-400 hover:underline"
+                >
                   Tailwind CSS
                 </a>
               </li>
