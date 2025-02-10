@@ -1,49 +1,37 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { SparklesCore } from '@/components/sparkles';
 
-/**
- * Represents a team member with optional social media profiles.
- */
 interface TeamMember {
-  /** The team member's full name. */
   name: string;
-  /** The team member's role within the team. */
   role: string;
-  /** A brief biography of the team member. */
   bio: string;
-  /** URL to the team member's avatar image. */
   avatar?: string;
-  /** URL to the team member's GitHub profile. */
   github?: string;
-  /** URL to the team member's Instagram profile. */
   instagram?: string;
-  /** URL to the team member's Discord profile. */
   discord?: string;
 }
 
-/** An array of team members with their details. */
 const teamMembers: TeamMember[] = [
   {
     name: 'Zack',
     role: 'Lead Developer',
     bio: 'I’m a developer who loves making websites and Discord bots.\nI mess around with JavaScript, ForgeScript, and Next.js, always trying new things to make stuff better and more fun to use.',
-    // avatar: '/team/zack911.png', // Uncomment this if you have an image
+    avatar: '/team/zack911.png',
     github: 'https://github.com/zack-911',
     instagram: 'https://instagram.com/o_o.muhammad',
     discord: 'https://discord.com/users/1273256222715285527',
   },
-  // Add more team members as needed
 ];
-
 
 function getInitials(name: string): string {
   return name
     .split(' ')
-    .map((part: string) => part[0])
+    .map((part) => part[0])
     .join('');
 }
 
@@ -73,7 +61,7 @@ export default function AboutPage() {
           >
             About Chronium
           </motion.h1>
-          
+
           <motion.section
             className="mb-16"
             initial={{ opacity: 0 }}
@@ -103,10 +91,12 @@ export default function AboutPage() {
                   transition={{ duration: 0.5, delay: 0.2 * index }}
                 >
                   {member.avatar ? (
-                    <img
+                    <Image
                       src={member.avatar}
                       alt={member.name}
                       className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                      width={128}
+                      height={128}
                     />
                   ) : (
                     <div
