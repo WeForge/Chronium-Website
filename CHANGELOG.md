@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.20](https://github.com/WeForge/Chronium-Website/compare/v0.5.19...v0.5.20) (2025-02-10)
+
+
+### Bug Fixes
+
+* **package.json:** unable to deploy on vercel ([a74ece2](https://github.com/WeForge/Chronium-Website/commit/a74ece2e90fa983d3a544dee1427fc81c3361e11))
+
 ### [0.5.19](https://github.com/WeForge/Chronium-Website/compare/v0.5.18...v0.5.19) (2025-02-10)
 
 ### [0.5.18](https://github.com/WeForge/Chronium-Website/compare/v0.5.17...v0.5.18) (2025-02-10)
