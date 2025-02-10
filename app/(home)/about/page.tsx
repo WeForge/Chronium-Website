@@ -50,7 +50,7 @@ export default function AboutPage() {
       </div>
 
       <div className="relative z-10">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-16 pt-0.75">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-center text-white mb-8"
             initial={{ opacity: 0, y: -50 }}
@@ -68,7 +68,7 @@ export default function AboutPage() {
           >
             <h2 className="text-2xl font-semibold text-purple-400 mb-4">Our Story</h2>
             <p className="text-gray-300 leading-relaxed">
-              Skibi Rizz Ohio Yesh Yesh YEsh
+              Skibidi Rizz Ohio Yesh Yesh YEsh
             </p>
           </motion.section>
 
