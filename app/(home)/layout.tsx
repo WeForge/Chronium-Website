@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <Head>
         <title>Chronium | Home</title>
         <meta name="description" content="All-In-One discord bot which is 100% free!" />
