@@ -3,9 +3,9 @@
   "version": "0.5.19",
   "private": true,
   "scripts": {
-    "build": "clear && next build",
-    "dev": "clear && next dev",
-    "start": "clear && next start -p 42069",
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start -p 42069",
     "postinstall": "fumadocs-mdx",
     "cz": "cz",
     "release": "standard-version --no-verify && git push --follow-tags",
