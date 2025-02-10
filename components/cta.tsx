@@ -23,7 +23,7 @@ export default function CTA() {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Join thousands of servers already using Chronium to enhance moderation, management, and community engagement -
+          Join thousands of servers already using Kiko San to enhance moderation, management, and community engagement -
           all for free!
         </motion.p>
         <motion.div
@@ -34,7 +34,7 @@ export default function CTA() {
         >
           <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-md transition-colors text-lg flex items-center justify-center mx-auto">
             <Bot className="mr-2 h-6 w-6" />
-            Add Chronium to Discord - It&apos;s Free!
+            Add Kiko San to Discord - It&apos;s Free!
           </button>
         </motion.div>
       </div>

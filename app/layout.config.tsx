@@ -24,7 +24,7 @@ export const baseOptions: BaseLayoutProps = {
           <path d="M15 13v2"></path>
           <path d="M9 13v2"></path>
         </svg>
-        <span className="text-white font-medium text-xl">Chronium</span>
+        <span className="text-white font-medium text-xl">Kiko San</span>
       </>
     ),
     transparentMode: 'always',

@@ -24,7 +24,7 @@ function DesktopNavbar() {
       >
         <Link href="/" className="flex items-center space-x-2">
           <Bot className="w-8 h-8 text-purple-500" />
-          <span className="text-white font-medium text-xl">Chronium</span>
+          <span className="text-white font-medium text-xl">Kiko San</span>
         </Link>
       </motion.div>
 
@@ -34,8 +34,9 @@ function DesktopNavbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-        <NavLink href="#features">Features</NavLink>
+        <NavLink href="/#features">Features</NavLink>
         <NavLink href="/docs">Commands</NavLink>
+        <NavLink href="/about">About</NavLink>
       </motion.div>
 
       <motion.div

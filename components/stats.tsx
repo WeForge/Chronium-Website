@@ -14,7 +14,7 @@ export default function Stats() {
     <section id="stats" className="py-20 bg-gradient-to-b from-black to-purple-900/20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-white mb-12" data-aos="fade-up">
-          Chronium by the Numbers
+          Kiko San by the Numbers
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

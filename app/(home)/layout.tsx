@@ -1,10 +1,10 @@
 "use client";
 import "../globals.css";
-import type { Metadata } from "next";
 import React from "react";
 import Footer from "@/components/footer";
 import DesktopNavbar from "@/components/DesktopNavbar";
 import MobileNavbar from "@/components/MobileNavbar";
+import Head from 'next/head';
 
 export default function RootLayout({
   children,
@@ -13,9 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* You can include additional head elements here */}
-      </head>
+      <Head>
+        <title>Kiko San | Home</title>
+        <meta name="description" content="All-In-One discord bot which is 100% free!" />
+      </Head>
       <body>
         {/* Mobile Navbar shown on small screens */}
         <div className="block md:hidden">
