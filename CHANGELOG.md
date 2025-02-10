@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.18](https://github.com/WeForge/Chronium-Website/compare/v0.5.17...v0.5.18) (2025-02-10)
+
+
+### Bug Fixes
+
+* **about page:** fixed Heading Clipping Into Navbar ([26fcd6c](https://github.com/WeForge/Chronium-Website/commit/26fcd6c5fa9f076731a57d2caf7e38378e5c2603))
+
 ### [0.5.17](https://github.com/WeForge/Chronium-Website/compare/v0.5.16...v0.5.17) (2025-02-10)
 
 
