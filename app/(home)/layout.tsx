@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <title>Kiko San | Home</title>
+        <title>Chronium | Home</title>
         <meta name="description" content="All-In-One discord bot which is 100% free!" />
       </Head>
       <body>

@@ -24,7 +24,7 @@ function DesktopNavbar() {
       >
         <Link href="/" className="flex items-center space-x-2">
           <Bot className="w-8 h-8 text-purple-500" />
-          <span className="text-white font-medium text-xl">Kiko San</span>
+          <span className="text-white font-medium text-xl">Chronium</span>
         </Link>
       </motion.div>
 

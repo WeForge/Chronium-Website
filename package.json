@@ -1,6 +1,6 @@
 {
-  "name": "Kiko San-website",
-  "version": "2.1.10",
+  "name": "chronium-website",
+  "version": "0.5.10",
   "private": true,
   "scripts": {
     "build": "next build",

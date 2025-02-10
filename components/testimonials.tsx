@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Alex Johnson",
     role: "Server Admin",
-    content: "Kiko San has revolutionized how we manage time in our community. It's a game-changer!",
+    content: "Chronium has revolutionized how we manage time in our community. It's a game-changer!",
     avatar: "",
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
   {
     name: "Mike Brown",
     role: "Event Organizer",
-    content: "Scheduling events has never been easier. Kiko San is now an essential tool for us.",
+    content: "Scheduling events has never been easier. Chronium is now an essential tool for us.",
     avatar: "",
   },
 ];

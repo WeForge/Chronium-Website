@@ -28,7 +28,7 @@ export default function Hero() {
               transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
             >
               {" "}
-              Kiko San
+              Chronium
             </motion.span>
           </motion.h1>
 
@@ -38,7 +38,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
           >
-            Kiko San is your free, all-in-one Discord bot for moderation, server management, economy, and more. Keep
+            Chronium is your free, all-in-one Discord bot for moderation, server management, economy, and more. Keep
             your server organized, engage your community, and never miss a beat with our integrated chatbot!
           </motion.p>
 

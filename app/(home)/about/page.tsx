@@ -57,7 +57,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            About Kiko San
+            About Chronium
           </motion.h1>
 
           <motion.section
