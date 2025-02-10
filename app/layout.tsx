@@ -14,6 +14,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         <RootProvider 
           theme={{
             enabled: true,
+            defaultTheme:'system',
+            enableSystem: true,
+            enableColorScheme: true
           }}
         >
           {children}
