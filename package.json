@@ -1,11 +1,11 @@
 {
   "name": "chronium-website",
-  "version": "0.5.22",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start -p 42069",
+    "start": "next start -p $PORT",
     "postinstall": "fumadocs-mdx",
     "cz": "cz",
     "release": "standard-version && git push --follow-tags",

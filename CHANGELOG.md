@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/WeForge/Chronium-Website/compare/v0.5.22...v1.0.1) (2025-02-11)
+
 ### [0.5.22](https://github.com/WeForge/Chronium-Website/compare/v0.5.21...v0.5.22) (2025-02-11)
 
 
