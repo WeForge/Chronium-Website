@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.22](https://github.com/WeForge/Chronium-Website/compare/v0.5.21...v0.5.22) (2025-02-11)
+
+
+### Features
+
+* added components mainly ([0d8e456](https://github.com/WeForge/Chronium-Website/commit/0d8e45683327eb3f79f8c87f9f28c0658bc13e6e))
+* added Pages ([7e52bb2](https://github.com/WeForge/Chronium-Website/commit/7e52bb24a34dc4731aac49809189f793b02d782c))
+* **landing page:** added Content ([56bdcab](https://github.com/WeForge/Chronium-Website/commit/56bdcabd3728721fee5c900004c126bc136d48d9))
+
 ### [0.5.21](https://github.com/WeForge/Chronium-Website/compare/v0.5.20...v0.5.21) (2025-02-11)
 
 ### [0.5.20](https://github.com/WeForge/Chronium-Website/compare/v0.5.19...v0.5.20) (2025-02-10)
