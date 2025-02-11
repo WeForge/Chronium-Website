@@ -1,6 +1,6 @@
 {
   "name": "chronium-website",
-  "version": "0.5.20",
+  "version": "0.5.21",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -27,7 +27,7 @@
     "fumadocs-mdx": "11.4.1",
     "fumadocs-ui": "15.0.2",
     "lucide-react": "^0.474.0",
-    "next": "15.1.6",
+    "next": "^15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
