@@ -1,16 +1,12 @@
-"use client";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
-import { Bot } from "lucide-react";
-import { ReactNode } from "react";
+"use client"
+import { motion, useScroll, useTransform } from "framer-motion"
+import Link from "next/link"
+import { Bot } from "lucide-react"
+import type { ReactNode } from "react"
 
 function DesktopNavbar() {
-  const { scrollY } = useScroll();
-  const backgroundColor = useTransform(
-    scrollY,
-    [0, 100],
-    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.8)"]
-  );
+  const { scrollY } = useScroll()
+  const backgroundColor = useTransform(scrollY, [0, 100], ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.8)"])
 
   return (
     <motion.nav
@@ -34,9 +30,10 @@ function DesktopNavbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-        <NavLink href="/#features">Features</NavLink>
+        <NavLink href="/">Home</NavLink>
         <NavLink href="/docs">Commands</NavLink>
         <NavLink href="/about">About</NavLink>
+        <NavLink href="/support">Support</NavLink>
       </motion.div>
 
       <motion.div
@@ -53,24 +50,22 @@ function DesktopNavbar() {
         </button>
       </motion.div>
     </motion.nav>
-  );
+  )
 }
 
 interface NavLinkProps {
-  href: string;
-  children: ReactNode;
+  href: string
+  children: ReactNode
 }
 
 function NavLink({ href, children }: NavLinkProps) {
   return (
-    <Link
-      href={href}
-      className="text-gray-300 hover:text-white transition-colors relative group"
-    >
+    <Link href={href} className="text-gray-300 hover:text-white transition-colors relative group">
       {children}
       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full" />
     </Link>
-  );
+  )
 }
 
-export default DesktopNavbar;
+export default DesktopNavbar
+

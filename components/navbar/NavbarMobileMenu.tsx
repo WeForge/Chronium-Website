@@ -1,13 +1,12 @@
-import * as React from 'react';
-import { Menu } from '@base-ui-components/react/menu';
-import { ChevronDownIcon } from 'lucide-react';
+import type * as React from "react"
+import { Menu } from "@base-ui-components/react/menu"
+import { ChevronDownIcon } from "lucide-react"
+import Link from "next/link"
 
 export default function NavbarMobileButton() {
   return (
     <Menu.Root>
-      <Menu.Trigger
-        className="flex h-10 items-center justify-center gap-2 rounded-md border border-transparent bg-purple-600 px-3.5 text-white hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-blue-800 active:bg-purple-700"
-      >
+      <Menu.Trigger className="flex h-10 items-center justify-center gap-2 rounded-md border border-transparent bg-purple-600 px-3.5 text-white hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-blue-800 active:bg-purple-700">
         <ChevronDownIcon className="w-5 h-5 text-white" />
       </Menu.Trigger>
       <Menu.Portal>
@@ -27,7 +26,7 @@ export default function NavbarMobileButton() {
                 data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0
                 data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm data-[highlighted]:before:bg-gray-800"
             >
-              Support Server
+              <Link href="/">Home</Link>
             </Menu.Item>
             <Menu.Item
               className="flex cursor-pointer py-2 pr-8 pl-4 text-sm leading-4 select-none
@@ -35,7 +34,23 @@ export default function NavbarMobileButton() {
                 data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0
                 data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm data-[highlighted]:before:bg-gray-800"
             >
-              Add To Discord
+              <Link href="/docs">Commands</Link>
+            </Menu.Item>
+            <Menu.Item
+              className="flex cursor-pointer py-2 pr-8 pl-4 text-sm leading-4 select-none
+                data-[highlighted]:relative data-[highlighted]:z-0 data-[highlighted]:text-white
+                data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0
+                data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm data-[highlighted]:before:bg-gray-800"
+            >
+              <Link href="/about">About</Link>
+            </Menu.Item>
+            <Menu.Item
+              className="flex cursor-pointer py-2 pr-8 pl-4 text-sm leading-4 select-none
+                data-[highlighted]:relative data-[highlighted]:z-0 data-[highlighted]:text-white
+                data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0
+                data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm data-[highlighted]:before:bg-gray-800"
+            >
+              <Link href="/support">Support</Link>
             </Menu.Item>
             <Menu.Separator className="mx-4 my-1.5 h-px bg-white opacity-30" />
             <Menu.Item
@@ -58,10 +73,10 @@ export default function NavbarMobileButton() {
         </Menu.Positioner>
       </Menu.Portal>
     </Menu.Root>
-  );
+  )
 }
 
-function ArrowSvg(props: React.ComponentProps<'svg'>) {
+function ArrowSvg(props: React.ComponentProps<"svg">) {
   return (
     <svg width="20" height="10" viewBox="0 0 20 10" fill="none" {...props}>
       <path
@@ -77,5 +92,6 @@ function ArrowSvg(props: React.ComponentProps<'svg'>) {
         className="opacity-50"
       />
     </svg>
-  );
+  )
 }
+

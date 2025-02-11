@@ -1,9 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Bot, Shield, DollarSign, MessageCircle, Server } from "lucide-react"
-import { FloatingBots } from "@/components/floating-bots"
-import type React from "react"
+import { Bot, Shield, DollarSign, MessageCircle, Server, ArrowRight } from "lucide-react"
+import { FloatingBots } from "@/components/utility/floating-bots"
+import Link from "next/link"
+import type React from "react" // Added import for React
 
 export default function Hero() {
   return (
@@ -20,14 +21,13 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
           >
-            All-in-One Discord Bot:
+            Elevate Your Discord Experience with
             <motion.span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-teal-400"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-teal-400 block"
               initial={{ backgroundPosition: "0% 50%" }}
               animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
               transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
             >
-              {" "}
               Chronium
             </motion.span>
           </motion.h1>
@@ -39,7 +39,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
           >
             Chronium is your free, all-in-one Discord bot for moderation, server management, economy, and more. Keep
-            your server organized, engage your community, and never miss a beat with our integrated chatbot!
+            your server organized, engage your community, and never miss a beat with our integrated AI chatbot!
           </motion.p>
 
           <motion.div
@@ -48,7 +48,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
           >
-            <FeatureButton icon={Shield} label="Moderation" delay={1.1} />
+            <FeatureButton icon={Shield} label="Advanced Moderation" delay={1.1} />
             <FeatureButton icon={Server} label="Server Management" delay={1.3} />
             <FeatureButton icon={DollarSign} label="Economy System" delay={1.5} />
             <FeatureButton icon={MessageCircle} label="AI Chatbot" delay={1.7} />
@@ -61,21 +61,24 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.9, ease: "easeOut" }}
           >
             <motion.button
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-md transition-colors flex items-center"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-md transition-colors flex items-center text-lg font-semibold"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Bot className="mr-2 h-5 w-5" />
               Add to Discord
             </motion.button>
-            <motion.button
-              className="border border-purple-500 text-white px-8 py-3 rounded-md hover:bg-purple-500/20 transition-colors flex items-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Server className="mr-2 h-5 w-5" />
-              View All Features
-            </motion.button>
+            <Link href="/features" passHref>
+              <motion.a
+                className="border border-purple-500 text-white px-8 py-3 rounded-md hover:bg-purple-500/20 transition-colors flex items-center text-lg font-semibold"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Server className="mr-2 h-5 w-5" />
+                Explore Features
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </motion.a>
+            </Link>
           </motion.div>
         </div>
       </div>

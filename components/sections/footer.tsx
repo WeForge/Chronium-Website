@@ -22,7 +22,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#commands" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <Link href="#docs" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Commands
                 </Link>
               </li>
