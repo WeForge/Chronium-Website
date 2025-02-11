@@ -9,7 +9,7 @@
     "postinstall": "fumadocs-mdx",
     "cz": "cz",
     "release": "standard-version --no-verify && git push --follow-tags",
-    "commit": "clear && npm run cz && npm run release"
+    "commit": "clear && npm run cz"
   },
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-alpha.5",
