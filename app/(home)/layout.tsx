@@ -1,9 +1,9 @@
 "use client";
 import "../globals.css";
 import React from "react";
-import Footer from "@/components/footer";
-import DesktopNavbar from "@/components/DesktopNavbar";
-import MobileNavbar from "@/components/MobileNavbar";
+import Footer from "@/components/sections/footer";
+import DesktopNavbar from "@/components/navbar/DesktopNavbar";
+import MobileNavbar from "@/components/navbar/MobileNavbar";
 import Head from 'next/head';
 
 export default function RootLayout({
